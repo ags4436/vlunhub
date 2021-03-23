@@ -1,0 +1,77 @@
+# Nmap 7.91 scan initiated Tue Mar 23 06:18:30 2021 as: nmap -sV -sS -sC -vv -oN nmap.txt 192.168.1.7
+Nmap scan report for 192.168.1.7
+Host is up, received arp-response (0.0014s latency).
+Scanned at 2021-03-23 06:18:31 EDT for 26s
+Not shown: 996 closed ports
+Reason: 996 resets
+PORT    STATE SERVICE     REASON         VERSION
+21/tcp  open  ftp         syn-ack ttl 64 vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_drwxr-xr-x    2 0        0            4096 Dec 17 12:02 thomas
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.1.9
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 4
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp  open  http        syn-ack ttl 64 Apache httpd 2.4.38 ((Debian))
+| http-methods: 
+|_  Supported Methods: OPTIONS HEAD GET POST
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: Alfa IT Solutions
+139/tcp open  netbios-ssn syn-ack ttl 64 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn syn-ack ttl 64 Samba smbd 4.9.5-Debian (workgroup: WORKGROUP)
+MAC Address: 08:00:27:4D:AA:A7 (Oracle VirtualBox virtual NIC)
+Service Info: Host: ALFA; OS: Unix
+
+Host script results:
+|_clock-skew: mean: -5h50m00s, deviation: 34m37s, median: -5h30m01s
+| nbstat: NetBIOS name: ALFA, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| Names:
+|   ALFA<00>             Flags: <unique><active>
+|   ALFA<03>             Flags: <unique><active>
+|   ALFA<20>             Flags: <unique><active>
+|   \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   WORKGROUP<1d>        Flags: <unique><active>
+|   WORKGROUP<1e>        Flags: <group><active>
+| Statistics:
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|_  00 00 00 00 00 00 00 00 00 00 00 00 00 00
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 58844/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 60935/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 33124/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 56998/udp): CLEAN (Failed to receive data)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.9.5-Debian)
+|   Computer name: alfa
+|   NetBIOS computer name: ALFA\x00
+|   Domain name: \x00
+|   FQDN: alfa
+|_  System time: 2021-03-23T05:48:56+01:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-03-23T04:48:56
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Mar 23 06:18:57 2021 -- 1 IP address (1 host up) scanned in 26.67 seconds
